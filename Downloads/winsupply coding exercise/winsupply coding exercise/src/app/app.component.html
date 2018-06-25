@@ -1,0 +1,66 @@
+<div class="wapper">
+  <div class="row">
+    <div class="col-sm-12 col-xs-12 form-title">
+      <h3>
+        <strong>Task Tracker</strong>
+      </h3>
+      <p>v2.0</p>
+    </div>
+  </div>
+  <div class="row form-main">
+    <div class="col-sm-6 col-xs-12 form-entry">
+      <h6>
+        <strong>Create a Task</strong>
+      </h6>
+      <form>
+        <div class="form-group">
+          <label>Task Name</label>
+          <input type="text" #name="ngModel" required name="name"  maxlength="20" [(ngModel)]="userTask.name" class="form-control">
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+            <div *ngIf="name.errors.required">
+              Name is required.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Date</label>
+          <input type="text" name="date" #date="ngModel" maxlength="20"  required [(ngModel)]="userTask.date" class="form-control">
+          <div *ngIf="date.invalid && (date.dirty || date.touched)" class="alert alert-danger">
+            <div *ngIf="date.errors.required">
+              Date is required.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Assigned to</label>
+          <input type="text" name="assigned" #assigned="ngModel" maxlength="15" required  [(ngModel)]="userTask.assigned" class="form-control">
+          <div *ngIf="assigned.invalid && (assigned.dirty || assigned.touched)" class="alert alert-danger">
+            <div *ngIf="assigned.errors.required">
+              Assigned is required.
+            </div>
+          </div>
+        </div>
+        <button type="submit" [disabled]="name.invalid || date.invalid || assigned.invalid " (click)="onSubmitClick()" class="btn btn-success btn-sm">Submit</button>
+      </form>
+    </div>
+    <div class="col-sm-6 col-xs-12 form-entry-detail">
+      <h6>
+        <strong>Exisiting Tasks</strong>
+      </h6>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <tbody>
+            <tr *ngFor="let task of tasks;let i=index;">
+              <td class="boldClass">{{task.name.split('#')[0]}}</td>
+              <td class="greyClass">{{task.date}}</td>
+              <td class="boldClass">{{task.assigned}}</td>
+              <td>
+                <button type="button" class="btn btn-danger btn-sm" (click)="onRemoveClick(i)">Remove</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

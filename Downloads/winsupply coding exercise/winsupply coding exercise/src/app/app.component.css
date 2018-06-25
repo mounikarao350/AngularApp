@@ -1,0 +1,78 @@
+.wapper {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 800px;
+}
+
+.form-title {
+  border: 6px solid #e3e3e3;
+  background-color: #f1f1f1;
+  border-bottom: 0;
+  padding: 25px;
+}
+
+.form-title h3 {
+  margin: 0
+}
+
+.form-title p {
+  margin-bottom: 0;
+}
+
+.form-main [class*="form-entry"] {
+  background-color: #fff;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.form-main [class*="form-entry"] h6 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 16px;
+}
+
+.form-main .form-entry {
+  border-right: 2px solid #f3f3f3;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.form-main .form-entry input {
+  background-color: #f3f3f3;
+  border: 0;
+}
+
+.form-main .form-entry-detail {
+  padding-right: 15px;
+}
+
+.form-main .form-entry-detail table {
+  border: 3px solid #f3f3f3;
+}
+
+.form-main .form-entry-detail .table>tbody>tr>td {
+  border-top: 0;
+}
+
+.form-main {
+  border-bottom: 25px solid #f3f3f3;
+  border-left: 6px solid #f3f3f3;
+  border-right: 6px solid #f3f3f3;
+}
+
+.boldClass{
+    font-weight: bold;
+}
+.greyClass{
+    color: gray;
+}
+
+.alert{
+    padding: 5px;
+    margin-bottom: 20px;
+    margin-top:2px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
