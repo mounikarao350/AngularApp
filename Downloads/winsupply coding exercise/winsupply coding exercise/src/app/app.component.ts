@@ -20,7 +20,12 @@ export class AppComponent implements OnInit {
     this.tasks = this.taskService.getTask();
   }
   onSubmitClick() {
-    this.tasks.push(this.userTask);
+    this.tasks.unshift(this.userTask);
+    this.userTask = {
+      name: '',
+      date: '',
+      assigned: ''
+    };
   }
   onRemoveClick(index) {
     this.tasks.splice(index, 1);
